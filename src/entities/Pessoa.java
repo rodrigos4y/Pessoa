@@ -3,15 +3,20 @@ package entities;
 public class Pessoa {
 	
 	private String nome;
-	private String data;
+	private Integer diaNascimento;
+	private Integer mesNascimento;
+	private Integer anoNascimento;
 	private Double altura;
+	private Integer idade;
 	
 	public Pessoa() {
 	}
 
-	public Pessoa(String nome, String data, Double altura) {
+	public Pessoa(String nome, Integer diaNascimento, Integer mesNascimento, Integer anoNascimento, Double altura) {
 		this.nome = nome;
-		this.data = data;
+		this.diaNascimento = diaNascimento;
+		this.mesNascimento = mesNascimento;
+		this.anoNascimento = anoNascimento;
 		this.altura = altura;
 	}
 
@@ -23,12 +28,28 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public String getData() {
-		return data;
+	public Integer getDiaNascimento() {
+		return diaNascimento;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setDiaNascimento(Integer diaNascimento) {
+		this.diaNascimento = diaNascimento;
+	}
+
+	public Integer getMesNascimento() {
+		return mesNascimento;
+	}
+
+	public void setMesNascimento(Integer mesNascimento) {
+		this.mesNascimento = mesNascimento;
+	}
+
+	public Integer getAnoNascimento() {
+		return anoNascimento;
+	}
+
+	public void setAnoNascimento(Integer anoNascimento) {
+		this.anoNascimento = anoNascimento;
 	}
 
 	public Double getAltura() {
@@ -38,6 +59,18 @@ public class Pessoa {
 	public void setAltura(Double altura) {
 		this.altura = altura;
 	}
+
+	public Integer calcularIdade(Integer anoAtual) {
+		idade = anoAtual - this.anoNascimento;
+		
+		return idade;
+	}
 	
+	public void imprimir() {
+		System.out.println(nome);
+		System.out.println(diaNascimento + "/" + mesNascimento + "/" + anoNascimento);
+		System.out.println(altura);
+		System.out.println(idade);
+	}
 		
 }
